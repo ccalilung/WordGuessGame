@@ -5,6 +5,7 @@
     <title>Word Guess Game</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -19,18 +20,21 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-dark bg-info mb-4">
+        <nav class="navbar navbar-dark bg-dark mb-4">
             <div class="container-fluid">
-                <a class="navbar-brand" href="index.html">Game</a>
+                <a class="navbar-brand" href="index.html">Hangman Game</a>
             </div>
         </nav>
     </header>
     <div class="container">
         <div class="row my-4">
             
-            <div class="col-md-4"></div>
+            <div class="col-md-4">
+            <div id="gameOver"></div><br>
+            <div id="correctWords">Words Correctly Guessed:<br></div><br> 
+            <div id="incorrectWords">Words Missed:<br></div></div>
             <div class="col-md-4 text-center">
-                <div id="alpha">_ &nbsp;</div><div id="bravo">_ &nbsp;</div><div id="charlie">_ &nbsp;</div><div id="delta">_ &nbsp;</div><div id="echo">_ &nbsp;</div>
+                <div id="alpha"> &nbsp;</div>
                 <br><br>
                 <div id="wrong"></div>
             </div>
@@ -38,8 +42,11 @@
                 Correct Guesses:  <div id="correctG">__</div> <br>
                 Incorrect Guesses:  <div id="incorrectG">__</div> <br>
                 Guesses Left:  <div id="guessLeft">__</div> <br>
-                Wins:  <div id="wins">__</div>
+                Wins:  <div id="wins"></div> <br>
+                Losses: <div id="loss"></div>
             </div>
+            <br>
+            
             
         </div>
     </div>
@@ -47,7 +54,7 @@
 
 
 
-    <script src="assets/javascript/game.js"></script>
+    <script src="assets/javascript/game3.js"></script>
 
 
 

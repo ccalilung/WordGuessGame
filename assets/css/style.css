@@ -1,20 +1,4 @@
-/* #alpha {
-    float: left;
-} */
-
-#delta {
-    float: left;
+body {
+    background-image: url(../images/Nissan_GTR.JPG);
+    background-size: 100%;
 }
-
-#charlie {
-    float: left;
-}
-
-#bravo {
-    float: left;
-}
-
-#echo {
-    float: left;
-}
-

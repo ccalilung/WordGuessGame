@@ -1,10 +1,27 @@
-// Document ready
-$("#startGame").on("click", function() {
+$("#startGame").on("click", function () {
     start();
     chooseWord();
     resetCheckVariables();
     startedGame();
+    $(".instructionsText").html("");
+    var newButton = $("<button>");
+    newButton.addClass("btn btn-success");
+    newButton.attr('id', 'showInstructions').text("Show Instructions");
+    $("#reReadInstructions").append(newButton);
+    $("#startGame").remove();
+    readInstructions();
 });
+
+// $("#hideInstructions").on("click",function() {
+//     $(".instructionsText").html("");
+//     // $("#hideInstructions").remove();
+// });
+
+function readInstructions() {
+    $("#showInstructions").on("click", function () {
+        alert("The game is hangman. Type any letter to guess a letter. Correct guesses will result in the letter appearing in its proper place in the word. Correct guesses do not count against the \"Guesses Left.\" Incorrect guesses will appear below the hidden word. These will reduce the number of guesses you have left. If you correctly guess the letters of the word without running out of guesses, you win the round and it is recorded. Conversely, if you run out of guesses before guessing the word correctly, you lose the round and it is recorded. In both these cases, the game resets and a new word appears. The game ends once you've run out of words to guess.")
+    })
+    $("#notes").html("Notes:<br>1) Capitalization is not important.<br>2) Spacing <u>may</u> be important.<br>");}
 
 
 
@@ -39,6 +56,7 @@ function startedGame() {
     var textGuesses = $("#text3");
     var textWin = $("#text4");
     var textLoss = $("#text5");
+    var textStartGame = $("#instructions")
     textCorrectWords.html("Words Guessed Correctly:");
     textIncorrectWords.html("Words Missed:");
     textCorrectGuess.html("Correct Guesses:");
@@ -46,9 +64,11 @@ function startedGame() {
     textGuesses.html("Guesses:");
     textWin.html("Wins:");
     textLoss.html("Losses:");
+    textStartGame.html("<h1>Hangman: Motors Edition<h1>")
+    textStartGame.append("<hr>")
     $("#wins").html(wins);
     $("#loss").html(losses);
-    
+
 }
 
 
@@ -75,7 +95,7 @@ function chooseWord() {
         var randomNum = Math.floor(Math.random() * words.length);
         extractedWord = words.splice(randomNum, 1);
         splitWord = extractedWord[0].split("");
-        guessesLeft = splitWord.length + 5;
+        guessesLeft = splitWord.length;
         for (i = 0; i < splitWord.length; i++) {
             blankDashes.push(" - ")
         }
@@ -86,7 +106,12 @@ function chooseWord() {
         $("#wrong").html(wrongLettersPrinted)
     } else {
         over = 1;
-        $("#gameOver").html("GAME OVER!!!")
+        if (wins>losses) {
+            $("#instructions").html("<h1>WINNER - YOU TOOK THE CHECKERED FLAG!<h1>").append("<hr>")
+        } else if (losses>wins) {
+            $("#instructions").html("<h1>LOSER - \"IF YOU AIN'T FIRST, YOU'RE LAST\" - RICKY BOBBY<h1>").append("<hr>")
+        }
+        
     }
 };
 
@@ -170,16 +195,16 @@ function gameCheck() {
         wins++
         $("#wins").html(wins);
         var one1 = splitWord.join("");
-        correctWord.push(one1, " ");
+        correctWord.push(one1);
         $("#correctWords").html("Words Correctly Guessed:" + " " + correctWord);
         reset();
-    } 
+    }
     // if the guessesLeft variable equals 0, the person has run out of guesses and s/he loses. Mark a loss, push word into incorrectWord, print, then reset game. If game is over, do not run function. 
     else if ((guessesLeft === 0) && (over === 0)) {
         losses++;
         $("#loss").html(losses);
         var two2 = splitWord.join("");
-        incorrectWord.push(two2, " ");
+        incorrectWord.push(two2);
         $("#incorrectWords").html("Words Missed:" + " " + incorrectWord);
         reset();
     }

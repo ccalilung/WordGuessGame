@@ -26,14 +26,14 @@
             </div>
         </nav>
     </header>
-    <div class="container">
-        <div class="row my-4">
-            <div class="col-md-2">
+    <div class="container py-1 bg-light rounded">
+        <div class="row my-4 instructionsText">
+            <div class="col-md-2 instructionsText">
                 <h4>Instructions:</h4>
             </div>
-            <div class="col-md-10">
+            <div class="col-md-10 instructionsText">
                 <p>The game is hangman. Type any letter to guess a letter. Correct guesses will result in the letter appearing
-                    in its proper place in the word. These guesses do not count against the "Guesses Left." Incorrect guesses
+                    in its proper place in the word. Correct guesses do not count against the "Guesses Left." Incorrect guesses
                     will appear below the hidden word. These will reduce the number of guesses you have left.</p>
                 <p>If you correctly guess the letters of the word without running out of guesses, you win the round and it is
                     recorded. Conversely, if you run out of guesses before guessing the word correctly, you lose the round
@@ -42,15 +42,16 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12 text-center"> 
+            <div id="instructions" class="col-md-12 text-center"> 
                     <button type="button" id="startGame" class="btn btn-success">Start Game</button>
+                    <!-- <button type="button" id="hideInstructions" class="btn btn-success">Hide Instructions</button>
+                     <button type="button" id="showInstructions" class="btn btn-success">Show Instructions</button> -->
+                     
             </div>
         </div>
 
         <div class="row my-4">
             <div class="col-md-4">
-                <div id="gameOver"></div>
-                <br>
                 <div id="correctWords">
                     <br>
                 </div>
@@ -80,6 +81,11 @@
             <br>
 
 
+        </div>
+        <div class="row">
+                <div id="notes" class="col-md-4 text-center"></div>
+                <div id="reReadInstructions" class="col-md-4 text-center">
+                </div>
         </div>
     </div>
 

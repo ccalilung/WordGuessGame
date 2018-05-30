@@ -56,7 +56,9 @@ function startedGame() {
     var textGuesses = $("#text3");
     var textWin = $("#text4");
     var textLoss = $("#text5");
-    var textStartGame = $("#instructions")
+    var textWrongLetters = $("#text6");
+    var textRightLetters = $("#text7");
+    var textStartGame = $("#instructions");
     textCorrectWords.html("Words Guessed Correctly:");
     textIncorrectWords.html("Words Missed:");
     textCorrectGuess.html("Correct Guesses:");
@@ -64,8 +66,9 @@ function startedGame() {
     textGuesses.html("Guesses:");
     textWin.html("Wins:");
     textLoss.html("Losses:");
-    textStartGame.html("<h1>Hangman: Motors Edition<h1>")
-    textStartGame.append("<hr>")
+    textStartGame.html("<h1>Hangman: Motors Edition<h1>").append("<hr>")
+    textWrongLetters.html("Wrong Letters:")
+    textRightLetters.html("The Word:")
     $("#wins").html(wins);
     $("#loss").html(losses);
 

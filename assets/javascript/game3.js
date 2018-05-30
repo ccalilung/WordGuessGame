@@ -63,7 +63,7 @@ function startedGame() {
     textIncorrectWords.html("Words Missed:");
     textCorrectGuess.html("Correct Guesses:");
     textIncorrectGuess.html("Incorrect Guesses:");
-    textGuesses.html("Guesses:");
+    textGuesses.html("Guesses Left:");
     textWin.html("Wins:");
     textLoss.html("Losses:");
     textStartGame.html("<h1>Hangman: Motors Edition<h1>").append("<hr>")

@@ -1,8 +1,9 @@
 // Document ready
-$(function () {
+$("#startGame").on("click", function() {
     start();
     chooseWord();
     resetCheckVariables();
+    startedGame();
 });
 
 
@@ -12,10 +13,9 @@ words = ["Honda", "Acura", "Mercedes Benz", "Aston Martin", "Jaguar", "Chevrolet
 keysDontCount = ["Backspace", "Shift", "Meta", "Control", "Alt", "ContextMenu", "CapsLock", "Tab", "Home", "PageUp", "PageDown", "End", "Delete", "Clear", "Enter", "ArrowUp", "ArrowLeft", "ArrowRight", "ArrowDown"]
 wins = 0;
 correctWord = [];
-$("#wins").html(wins);
 losses = 0;
 incorrectWord = [];
-$("#loss").html(losses);
+
 
 // Variables that need to be reset after each word
 function start() {
@@ -31,10 +31,25 @@ function start() {
     over = 0;
 }
 
-
-
-
-// Functions
+function startedGame() {
+    var textCorrectWords = $("#correctWords");
+    var textIncorrectWords = $("#incorrectWords");
+    var textCorrectGuess = $("#text1");
+    var textIncorrectGuess = $("#text2");
+    var textGuesses = $("#text3");
+    var textWin = $("#text4");
+    var textLoss = $("#text5");
+    textCorrectWords.html("Words Guessed Correctly:");
+    textIncorrectWords.html("Words Missed:");
+    textCorrectGuess.html("Correct Guesses:");
+    textIncorrectGuess.html("Incorrect Guesses:");
+    textGuesses.html("Guesses:");
+    textWin.html("Wins:");
+    textLoss.html("Losses:");
+    $("#wins").html(wins);
+    $("#loss").html(losses);
+    
+}
 
 
 function noF1() {
@@ -138,7 +153,7 @@ function incorrectGuess() {
         wrongLetters.push(guessUp);
         wrongLetters.push(guessLow);
         wrongLettersPrinted.push(guessLow)
-        $("#wrong").html(wrongLettersPrinted);
+        $("#wrong").html(wrongLettersPrinted + " ");
 
         // update wrong letter count and guesses left
         wrongGuessed++;

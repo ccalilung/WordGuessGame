@@ -28,26 +28,58 @@
     </header>
     <div class="container">
         <div class="row my-4">
-            
+            <div class="col-md-2">
+                <h4>Instructions:</h4>
+            </div>
+            <div class="col-md-10">
+                <p>The game is hangman. Type any letter to guess a letter. Correct guesses will result in the letter appearing
+                    in its proper place in the word. These guesses do not count against the "Guesses Left." Incorrect guesses
+                    will appear below the hidden word. These will reduce the number of guesses you have left.</p>
+                <p>If you correctly guess the letters of the word without running out of guesses, you win the round and it is
+                    recorded. Conversely, if you run out of guesses before guessing the word correctly, you lose the round
+                    and it is recorded. In both these cases, the game resets and a new word appears. The game ends once you've
+                    run out of words to guess.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center"> 
+                    <button type="button" id="startGame" class="btn btn-success">Start Game</button>
+            </div>
+        </div>
+
+        <div class="row my-4">
             <div class="col-md-4">
-            <div id="gameOver"></div><br>
-            <div id="correctWords">Words Correctly Guessed:<br></div><br> 
-            <div id="incorrectWords">Words Missed:<br></div></div>
-            <div class="col-md-4 text-center">
-                <div id="alpha"> &nbsp;</div>
-                <br><br>
+                <div id="gameOver"></div>
+                <br>
+                <div id="correctWords">
+                    <br>
+                </div>
+                <br>
+                <div id="incorrectWords">
+                    <br>
+                </div>
+            </div>
+            <div class="col-md-4 text-center col-md-offset-4">
+                <div id="alpha"></div>
+                <br>
+                <br>
                 <div id="wrong"></div>
             </div>
-            <div class="col-md-4">
-                Correct Guesses:  <div id="correctG">__</div> <br>
-                Incorrect Guesses:  <div id="incorrectG">__</div> <br>
-                Guesses Left:  <div id="guessLeft">__</div> <br>
-                Wins:  <div id="wins"></div> <br>
-                Losses: <div id="loss"></div>
+            <div class="col-md-4 text-center">
+                <div id="text1"></div>
+                <div id="correctG"></div>
+                <br> <div id="text2"></div>
+                <div id="incorrectG"></div>
+                <br> <div id="text3"></div>
+                <div id="guessLeft"></div>
+                <br> <div id="text4"></div>
+                <div id="wins"></div>
+                <br> <div id="text5"></div>
+                <div id="loss"></div>
             </div>
             <br>
-            
-            
+
+
         </div>
     </div>
 
